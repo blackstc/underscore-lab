@@ -70,12 +70,10 @@ var _ = {
   //*shuffle
   shuffle: function(numArray) {
     var output = [];
-    var random = 0;
     var workingArray = numArray.slice(0);
-    var current = workingArray.length;
 
     while (workingArray.length > 0) {
-      random = Math.floor(Math.random() * workingArray.length);
+      var random = Math.floor(Math.random() * workingArray.length);
       output.push(workingArray.splice(random, 1)[0]);
     }
     return output;
@@ -101,20 +99,11 @@ var _ = {
   //*difference
   difference: function(arr1, arr2) {
     var result = [];
-    var compare = 0;
-    var first = arr1[1];
-
-    for(j = 0; j < arr1.length; j++) {
-        for (i = 0; i < arr2.length; i++) {
-            if(arr1[j] !== arr2[i]) {
-                result.push(arr1[i]);
-            }
-        }
-    }
+    var workingArr = arr1.slice(0);
 
 
-    return result;
-  }
+  },
 };
 
-_.difference([1, 2, 3, 4, 5], [5, 2, 10]);
+
+_.shuffle([1, 2, 3, 4, 5, 6]);
