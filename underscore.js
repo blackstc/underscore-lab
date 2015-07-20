@@ -71,10 +71,12 @@ var _ = {
   shuffle: function(numArray) {
     var output = [];
     var workingArray = numArray.slice(0);
+    var current = workingArray.length;
 
-    while (workingArray.length > 0) {
-      var random = Math.floor(Math.random() * workingArray.length);
+    while (current) {
+      var random = Math.floor(Math.random() * current);
       output.push(workingArray.splice(random, 1)[0]);
+      current--;
     }
     return output;
   },
